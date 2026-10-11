@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Dhana Rizky Akhbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #4a3b32; 
+            background-color: #f7f3ed; 
+        }
+
+        a {
+            color: #8c5a3c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #5a3825; 
+        }
+
+        /* HEADER & NAVIGASI */
+        header {
+            background-color: #fffdfa; 
+            border-bottom: 1px solid #e2d7cd; 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a2e1b;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #6e5444; 
+            font-weight: 500;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: #4a2e1b;
+            font-weight: bold;
+        }
+
+        /* BANNER HALAMAN KONTAK */
+        .page-banner {
+            background-color: #efe8de; 
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e2d7cd;
+        }
+
+        .page-banner h1 {
+            font-size: 2rem;
+            color: #4a2e1b;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-banner p {
+            color: #6e5444;
+            font-size: 1rem;
+        }
+
+        /* LAYOUT UTAMA */
+        .main-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* FORMULIR KONTAK */
+        .contact-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 1.8rem;
+            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08); 
+            border: 1px solid #eee6dd;
+        }
+
+        .contact-box h2 {
+            font-size: 1.4rem;
+            color: #4a2e1b;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #e2d7cd;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: #4a2e1b;
+            font-size: 0.9rem;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e2d7cd;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #fffdfa;
+            color: #4a3b32;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8c5a3c;
+            box-shadow: 0 0 0 2px rgba(140, 90, 60, 0.15);
+        }
+
+        .btn-submit {
+            background-color: #8c5a3c;
+            color: #ffffff;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #5a3825;
+        }
+
+        /* SIDEBAR / INFO KONTAK */
+        .sidebar-box {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08);
+            margin-bottom: 2rem;
+            border: 1px solid #eee6dd;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: #4a2e1b;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8c5a3c; 
+            padding-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed #e2d7cd;
+            font-size: 0.95rem;
+        }
+
+        .info-list strong {
+            color: #4a2e1b;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #3b2314; 
+            color: #f7f3ed; 
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGASI HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">About ME...</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="cerita.html">Cerita</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BANNER HALAMAN KONTAK -->
+    <section class="page-banner">
+        <h1>Hubungi Saya</h1>
+        <p>Punya pertanyaan, saran, atau sekadar ingin menyapa? langsung saja!</p>
+    </section>
+
+    <!-- KONTEN UTAMA HALAMAN KONTAK -->
+    <div class="main-container">
+        
+        <!-- KOLOM FORMULIR -->
+        <main class="contact-column">
+            <div class="contact-box">
+                <h2>Kirim Pesan</h2>
+                <form action="#" method="POST" onsubmit="alert('Pesan berhasil terkirim!'); return false;">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" name="name" placeholder="Masukkan nama kamu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Alamat Email</label>
+                        <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subjek / Topik</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subjek pesan" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Pesan</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesanmu di sini..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Kirim Pesan</button>
+                </form>
+            </div>
+        </main>
+
+        <!-- SIDEBAR INFO KONTAK -->
+        <aside class="sidebar-column">
+            
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">Informasi Kontak</h3>
+                <ul class="info-list">
+                    <li><strong>Nama:</strong> Dhana Rizky Akhbar</li>
+                    <li><strong>Kelas:</strong> XII TKJ B</li>
+                    <li><strong>Sekolah:</strong> SMK 3 Perguruan "CIKINI"</li>
+                    <li><strong>Status:</strong> Pelajar</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">Media Sosial</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Follow Me:</p>
+                <ul class="info-list">
+                    <li>
+                        <a href="https://www.instagram.com/fleeurdebleu_" target="_blank">📷 @fleeurdebleu_</a>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; DHANA RIZKY AKHBAR XII TKJ B</p>
+    </footer>
+
+</body>
+</html>
