@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebsiteKU</title>
+    <title>Tugas Hosting</title>
     <style>
-       
         * {
             margin: 0;
             padding: 0;
@@ -101,7 +100,6 @@
             font-size: 1rem;
         }
 
-        
         .main-container {
             max-width: 1100px;
             margin: 2rem auto;
@@ -111,41 +109,56 @@
             gap: 2rem;
         }
 
-        
-        .post-card {
+        /* CARD CERITA / KONTEN BEBAS */
+        .story-card {
             background-color: #ffffff;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 1.8rem;
             box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08); 
             margin-bottom: 2rem;
             border: 1px solid #eee6dd;
         }
 
-        .post-img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #e2d7cd;
+            padding-bottom: 0.5rem;
         }
 
-        .post-content {
-            padding: 1.5rem;
+        .story-tag {
+            background-color: #efe8de;
+            color: #8c5a3c;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
 
-        .post-date {
+        .story-date {
             font-size: 0.85rem;
             color: #a08875;
-            margin-bottom: 0.5rem;
         }
 
-        .post-title {
+        .story-title {
             font-size: 1.4rem;
             margin-bottom: 0.8rem;
             color: #4a2e1b;
         }
 
-        .post-excerpt {
+        .story-body {
             color: #5c493c;
-            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .story-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 1rem 0;
         }
 
         /* SIDEBAR */
@@ -186,7 +199,6 @@
             font-size: 0.9rem;
         }
 
-        
         @media (max-width: 768px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -206,7 +218,7 @@
             <div class="logo">About ME...</div>
             <ul class="nav-links">
                 <li><a href="#">Beranda</a></li>
-                <li><a href="#">Artikel</a></li>
+                <li><a href="#">Cerita</a></li>
                 <li><a href="#">Kontak</a></li>
             </ul>
         </div>
@@ -215,43 +227,139 @@
     <!-- PROFIL / ABOUT ME -->
     <section class="profile-section">
         <div class="profile-container">
-            <img src="https://via.placeholder.com/150" alt="Foto Profil" class="profile-img">
+            <img src="FOTOdiri.png" alt="Foto Profil" class="profile-img">
             <h1 class="profile-title">Dhana Rizky Akhbar</h1>
             <p class="profile-bio">
-                Selamat datang di website Saya.
+                Selamat datang di sudut cerita dan catatan pribadi saya.
             </p>
         </div>
     </section>
 
-    <!-- KONTEN BLOG UTAMA -->
+    <!-- KONTEN UTAMA -->
     <div class="main-container">
         
-        <!-- KOLOM ARTIKEL -->
+        <!-- KOLOM CERITA & CATATAN -->
         <main class="posts-column">
             
-            <!-- Artikel 1 -->
-            <article class="post-card">
-                <img src="https://via.placeholder.com/600x300" alt="Gambar Artikel" class="post-img">
-                <div class="post-content">
-                    <p class="post-date">8 Oktober 2026</p>
-                    <h2 class="post-title"><a href="#">Judul Artikel Pertama Kamu</a></h2>
-                    <p class="post-excerpt">
-                        Ini adalah cuplikan singkat dari artikel pertama. Kamu bisa menjelaskan sekilas isi konten di bagian ini sebelum pembaca mengklik judulnya...
-                    </p>
-                    <a href="#">Baca Selengkapnya &rarr;</a>
+            <!-- Cerita 1 -->
+            <article class="story-card">
+                <div class="story-header">
+                    <span class="story-tag">Cerita Hari Ini</span>
+                    <span class="story-date">11 Oktober 2026</span>
                 </div>
-            </article>
+                <h2 class="story-title">Cara Membuat PIZZA</h2>
+                <img src="https://via.placeholder.com/600x250" alt="Foto Cerita" class="story-img">
+                <div class="story-body">
+                    <p>
+                        
+         <article style="max-width: 800px; margin: 0 auto; font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333;">
+    <header>
+        <h1 style="color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 10px;">Tutorial Lengkap Membuat Pizza Rumahan</h1>
+        <p><em>Bikin pizza empuk, lezat, dan anti-gagal bisa menggunakan oven maupun teflon!</em></p>
+    </header>
 
-            <!-- Artikel 2 -->
-            <article class="post-card">
-                <img src="https://via.placeholder.com/600x300" alt="Gambar Artikel" class="post-img">
-                <div class="post-content">
-                    <p class="post-date">5 Oktober 2026</p>
-                    <h2 class="post-title"><a href="#">Pengalaman Belajar Pemrograman Web</a></h2>
-                    <p class="post-excerpt">
-                        Ringkasan atau gambaran umum dari postingan blog kedua. Tulis sesuatu yang menarik di sini untuk memikat pembaca...
+    <section aria-label="Peralatan">
+        <h2 style="color: #e65100;">🛠️ Peralatan yang Diperlukan</h2>
+        <ul>
+            <li>Wadah mangkuk besar</li>
+            <li>Kain bersih atau <em>plastic wrap</em></li>
+            <li>Garpu</li>
+            <li>Gilingan adonan (<em>rolling pin</em>) atau botol kaca bersih</li>
+            <li>Loyang pizza atau teflon berpenutup</li>
+            <li>Pisau potong pizza / <em>pizza cutter</em></li>
+        </ul>
+    </section>
+
+    <section aria-label="Langkah Pembuatan">
+        <h2 style="color: #e65100;">📋 Langkah-Langkah Pembuatan</h2>
+        
+        <ol style="padding-left: 20px;">
+            <li style="margin-bottom: 15px;">
+                <strong>Mengaktifkan Ragi (Membuat Biang)</strong>
+                <ul>
+                    <li>Siapkan 150 ml air hangat kuku di dalam gelas.</li>
+                    <li>Masukkan 1 sdt ragi instan dan 2 sdm gula pasir.</li>
+                    <li>Aduk rata, lalu diamkan selama 10 menit.</li>
+                    <li><em>Catatan: Jika air mengeluarkan busa/buih, tandanya ragi aktif dan siap digunakan.</em></li>
+                </ul>
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Membuat dan Menguleni Adonan Base</strong>
+                <ul>
+                    <li>Campurkan 250 gram tepung terigu protein tinggi dan 1/2 sdt garam di wadah besar.</li>
+                    <li>Tuangkan air ragi yang sudah berbusa sedikit demi sedikit sambil diaduk.</li>
+                    <li>Tambahkan 2 sdm minyak goreng atau <em>olive oil</em>.</li>
+                    <li>Uleni adonan dengan tangan hingga kalis dan tidak lengket (sekitar 5–10 menit).</li>
+                </ul>
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Mengistirahatkan Adonan (Proving)</strong>
+                <ul>
+                    <li>Bentuk adonan menjadi bulatan besar.</li>
+                    <li>Olesi tipis permukaan adonan dengan sedikit minyak agar tidak kering.</li>
+                    <li>Tutup wadah rapat-rapat menggunakan kain bersih lembap atau <em>plastic wrap</em>.</li>
+                    <li>Diamkan selama 45–60 menit di tempat hangat sampai ukuran adonan mengembang 2 kali lipat.</li>
+                </ul>
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Membentuk Base Pizza</strong>
+                <ul>
+                    <li>Kempeskan adonan dengan cara ditinju perlahan untuk membuang gas di dalamnya.</li>
+                    <li>Siapkan loyang atau teflon yang sudah diolesi mentega tipis.</li>
+                    <li>Giling atau pipihkan adonan menggunakan jari tangan langsung di atas loyang hingga membentuk lingkaran.</li>
+                    <li>Buat bagian pinggiran sedikit lebih tebal daripada bagian tengah.</li>
+                    <li>Tusuk-tusuk bagian tengah adonan dengan garpu agar adonan tidak menggelembung saat dipanggang.</li>
+                </ul>
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Memberi Topping</strong>
+                <ul>
+                    <li>Oleskan saus bolognese atau saus tomat secara merata di area yang ditusuk garpu.</li>
+                    <li>Taburkan sebagian keju mozzarella di lapisan bawah.</li>
+                    <li>Tata topping pilihan Anda (seperti sosis, smoked beef, bawang bombai, dan paprika).</li>
+                    <li>Tutup kembali dengan sisa keju mozzarella dan taburan oregano kering untuk aroma khas pizza Italia.</li>
+                </ul>
+            </li>
+
+            <li style="margin-bottom: 15px;">
+                <strong>Proses Memanggang</strong>
+                <ul>
+                    <li><strong>Jika Menggunakan Oven:</strong> Panggang dalam oven yang sudah dipanaskan pada suhu 190°C selama 15–20 menit hingga pinggiran roti kecokelatan.</li>
+                    <li><strong>Jika Menggunakan Teflon:</strong> Letakkan teflon di atas kompor dengan api paling kecil. Tutup teflon rapat-rapat dan masak selama 10–15 menit hingga keju meleleh sempurna dan bagian bawah roti matang.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <footer style="margin-top: 30px; padding: 15px; background-color: #fff3e0; border-left: 5px solid #ffb74d;">
+        <h2 style="color: #d32f2f; margin-top: 0;">🍕 Penyajian</h2>
+        <ul>
+            <li>Angkat pizza yang sudah matang dari loyang atau teflon dengan hati-hati.</li>
+            <li>Letakkan di atas talenan kayu atau piring datar yang besar.</li>
+            <li>Potong pizza menjadi 6 atau 8 bagian berbentuk segitiga menggunakan pisau tajam atau <em>pizza cutter</em>.</li>
+        </ul>
+        <p style="font-size: 1.1em; font-weight: bold; text-align: center; color: #d32f2f; margin-top: 15px;">
+            Pizza siap dihidangkan selagi hangat bersama cocolan saus sambal atau saus tomat favorit keluarga!
+                 </p>
+             </footer>
+        </article>                 
+                </div>
+
+            <!-- Cerita 2 -->
+            <article class="story-card">
+                <div class="story-header">
+                    <span class="story-tag">Catatan Pikir</span>
+                    <span class="story-date">5 Oktober 2026</span>
+                </div>
+                <h2 class="story-title">Belajar Hal Baru Setiap Hari</h2>
+                <div class="story-body">
+                    <p>
+                        Tidak harus perubahan besar, konsistensi kecil setiap hari selalu membuahkan hasil. Bagian ini bisa kamu isi dengan refleksi diri, kutipan favorit, atau pengalaman menarik yang ingin dibagikan secara santai.
                     </p>
-                    <a href="#">Baca Selengkapnya &rarr;</a>
                 </div>
             </article>
 
@@ -260,14 +368,14 @@
         <!-- SIDEBAR -->
         <aside class="sidebar-column">
             
-            <!-- Widget Kategori -->
+            <!-- Widget Kategori Cerita -->
             <div class="sidebar-box">
-                <h3 class="sidebar-title">Kategori</h3>
+                <h3 class="sidebar-title">Topik Cerita</h3>
                 <ul class="category-list">
-                    <li><a href="#">Teknologi</a></li>
-                    <li><a href="#">Gaya Hidup</a></li>
                     <li><a href="#">Catatan Harian</a></li>
-                    <li><a href="#">Opini</a></li>
+                    <li><a href="#">Pengalaman & Perjalanan</a></li>
+                    <li><a href="#">Koleksi Ide</a></li>
+                    <li><a href="#">Hobi & Ketertarikan</a></li>
                 </ul>
             </div>
 
