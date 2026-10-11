@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita - Pride and Prejudice | Dhana Rizky Akhbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #4a3b32; 
+            background-color: #f7f3ed; 
+        }
+
+        a {
+            color: #8c5a3c;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #5a3825; 
+        }
+
+        /* HEADER & NAVIGASI */
+        header {
+            background-color: #fffdfa; 
+            border-bottom: 1px solid #e2d7cd; 
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #4a2e1b;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: #6e5444; 
+            font-weight: 500;
+        }
+
+        .nav-links a.active, .nav-links a:hover {
+            color: #4a2e1b;
+            font-weight: bold;
+        }
+
+        /* BANNER HALAMAN CERITA */
+        .page-banner {
+            background-color: #efe8de; 
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #e2d7cd;
+        }
+
+        .page-banner h1 {
+            font-size: 2rem;
+            color: #4a2e1b;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-banner p {
+            color: #6e5444;
+            font-size: 1rem;
+        }
+
+        /* LAYOUT UTAMA */
+        .main-container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* CARD CERITA */
+        .story-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 1.8rem;
+            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08); 
+            margin-bottom: 2rem;
+            border: 1px solid #eee6dd;
+        }
+
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #e2d7cd;
+            padding-bottom: 0.5rem;
+        }
+
+        .story-tag {
+            background-color: #efe8de;
+            color: #8c5a3c;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .story-date {
+            font-size: 0.85rem;
+            color: #a08875;
+        }
+
+        .story-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: #4a2e1b;
+        }
+
+        .story-body {
+            color: #5c493c;
+            line-height: 1.7;
+        }
+
+        .story-body p {
+            margin-bottom: 1rem;
+        }
+
+        .story-body h3 {
+            color: #8c5a3c;
+            font-size: 1.1rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* SIDEBAR */
+        .sidebar-box {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08);
+            margin-bottom: 2rem;
+            border: 1px solid #eee6dd;
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            color: #4a2e1b;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #8c5a3c; 
+            padding-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #e2d7cd;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #3b2314; 
+            color: #f7f3ed; 
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGASI HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">About ME...</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="cerita.html" class="active">Cerita</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- BANNER HALAMAN CERITA -->
+    <section class="page-banner">
+        <h1>Kumpulan Cerita & Catatan</h1>
+        <p>Refleksi film, ulasan karya klasik, dan sudut pandang pribadi.</p>
+    </section>
+
+    <!-- KONTEN UTAMA HALAMAN CERITA -->
+    <div class="main-container">
+        
+        <!-- KOLOM KONTEN UTAMA -->
+        <main class="posts-column">
+            
+            <!-- Cerita / Review Pride and Prejudice -->
+            <article class="story-card">
+                <div class="story-header">
+                    <span class="story-tag">Ulasan Film</span>
+                    <span class="story-date">11 Oktober 2026</span>
+                </div>
+                <h2 class="story-title">Menyelami Keindahan Klasik dalam "Pride and Prejudice"</h2>
+                
+                <div class="story-body">
+                    <p>
+                        Jika berbicara tentang kisah percintaan klasik yang memiliki kedalaman karakter luar biasa, film adaptasi <strong>Pride and Prejudice (2005)</strong> selalu punya tempat tersendiri di hati. Diangkat dari novel terkenal karya Jane Austen, film ini tidak hanya menawarkan kisah romantis biasa, tetapi juga kritik sosial yang cerdas dan penuh makna.
+                    </p>
+
+                    <h3>Karakter yang Ikonik: Elizabeth dan Mr. Darcy</h3>
+                    <p>
+                        Dinamika hubungan antara Elizabeth Bennet (diperankan oleh Keira Knightley) dan Mr. Darcy (Matthew Macfadyen) adalah inti dari cerita ini. Pertemuan awal mereka dipenuhi dengan salah paham, ego, dan sifat keras kepala. Sesuai dengan judulnya, cerita ini menyoroti bagaimana rasa <em>pride</em> (kebanggaan/keangkuhan) dan <em>prejudice</em> (prasangka) dapat membutakan penilaian seseorang terhadap orang lain.
+                    </p>
+
+                    <h3>Visual dan Musik yang Menenangkan</h3>
+                    <p>
+                        Salah satu hal yang paling memukau dari film ini adalah sinematografinya. Pemandangan pedesaan Inggris yang asri, pencahayaan bergaya lukisan era lampau (*painterly aesthetic*), dipadukan dengan alunan musik gubahan Dario Marianelli yang begitu emosional, membuat penonton seperti ditarik langsung masuk ke abad ke-19.
+                    </p>
+
+                    <div style="margin-top: 20px; padding: 15px; background-color: #efe8de; border-left: 4px solid #8c5a3c; border-radius: 4px;">
+                        <p style="margin-bottom: 0; font-style: italic;">
+                            "You must know... surely, you must know it was all for you. 
+                            You are too generous to trifle with me. 
+                            I believe you spoke with my aunt last night, and it has taught me to hope as I'd scarcely allowed myself before. If your feelings are still what they were last April, tell me so at once.
+                             My affections and wishes have not changed, but one word from you will silence me forever.
+                             If, however, your feelings have changed, I will have to tell you: you have bewitched me, body and soul, and I love, I love, I love you. 
+                             I never wish to be parted from you from this day on."
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar-column">
+            
+            <!-- Widget Topik Cerita -->
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">Topik Cerita</h3>
+                <ul class="category-list">
+                    <li><a href="#">Catatan Harian</a></li>
+                    <li><a href="#">Ulasan Film & Buku</a></li>
+                    <li><a href="#">Pengalaman & Perjalanan</a></li>
+                    <li><a href="#">Hobi & Ketertarikan</a></li>
+                </ul>
+            </div>
+
+            <!-- Widget Media Sosial -->
+            <div class="sidebar-box">
+                <h3 class="sidebar-title">FOLLOW ME :</h3>
+                <p>Media Sosial:</p>
+                <ul class="category-list" style="margin-top: 0.5rem;">
+                    <li><a href="https://www.instagram.com/fleeurdebleu_" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; DHANA RIZKY AKHBAR XII TKJ B</p>
+    </footer>
+
+</body>
+</html>
