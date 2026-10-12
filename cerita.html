@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cerita - Pride and Prejudice | Dhana Rizky Akhbar</title>
+    
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
+        /* PALET WARNA COKLAT & CREAM */
+        :root {
+            --primary-color: #6F4E37;      /* Coklat Kopi / Coffee Brown */
+            --primary-hover: #4A3323;      /* Coklat Tua Pekat / Dark Roast */
+            --text-dark: #2C1D11;          /* Espresso Dark Brown */
+            --text-muted: #6E5B4F;         /* Coklat Sedang / Warm Taupe */
+            --bg-main: #FAF3E0;            /* Warm Cream Background */
+            --bg-card: #FFFDF9;            /* Soft Ivory White Card */
+            --bg-profile: #EADBC8;         /* Rich Cream / Latte Accent */
+            --border-color: #D8C4B6;       /* Soft Brown Border */
+            --tag-bg: #EFE3C8;             /* Cream Highlight Tag */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,35 +31,37 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #4a3b32; 
-            background-color: #f7f3ed; 
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
         }
 
         a {
-            color: #8c5a3c;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
-            color: #5a3825; 
+            color: var(--primary-hover);
         }
 
         /* HEADER & NAVIGASI */
         header {
-            background-color: #fffdfa; 
-            border-bottom: 1px solid #e2d7cd; 
+            background-color: rgba(255, 253, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(111, 78, 55, 0.05);
         }
 
         .nav-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,148 +69,232 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a2e1b;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: #6e5444; 
+            color: var(--text-muted);
             font-weight: 500;
+            position: relative;
         }
 
-        .nav-links a.active, .nav-links a:hover {
-            color: #4a2e1b;
-            font-weight: bold;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after,
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* BANNER HALAMAN CERITA */
         .page-banner {
-            background-color: #efe8de; 
-            padding: 2.5rem 2rem;
+            background-color: var(--bg-profile);
+            padding: 3.5rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #e2d7cd;
+            border-bottom: 1px solid var(--border-color);
+            background-image: radial-gradient(var(--border-color) 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
         }
 
         .page-banner h1 {
-            font-size: 2rem;
-            color: #4a2e1b;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
         .page-banner p {
-            color: #6e5444;
-            font-size: 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         /* LAYOUT UTAMA */
         .main-container {
             max-width: 1100px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         /* CARD CERITA */
         .story-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 1.8rem;
-            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08); 
-            margin-bottom: 2rem;
-            border: 1px solid #eee6dd;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(74, 51, 35, 0.05);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 51, 35, 0.1);
         }
 
         .story-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed #e2d7cd;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 1rem;
         }
 
         .story-tag {
-            background-color: #efe8de;
-            color: #8c5a3c;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            background-color: var(--tag-bg);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .story-date {
-            font-size: 0.85rem;
-            color: #a08875;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
         .story-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: #4a2e1b;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-dark);
+            line-height: 1.3;
         }
 
         .story-body {
-            color: #5c493c;
-            line-height: 1.7;
+            color: var(--text-muted);
+            line-height: 1.8;
         }
 
         .story-body p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .story-body h3 {
-            color: #8c5a3c;
-            font-size: 1.1rem;
-            margin-top: 1.2rem;
-            margin-bottom: 0.4rem;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .story-quote {
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding: 20px 25px;
+            background-color: var(--bg-main);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--primary-hover);
+            font-size: 1.05rem;
         }
 
         /* SIDEBAR */
+        .sidebar-column {
+            position: sticky;
+            top: 100px; 
+            height: max-content;
+        }
+
         .sidebar-box {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08);
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(74, 51, 35, 0.05);
             margin-bottom: 2rem;
-            border: 1px solid #eee6dd;
+            border: 1px solid var(--border-color);
         }
 
         .sidebar-title {
-            font-size: 1.1rem;
-            color: #4a2e1b;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #8c5a3c; 
-            padding-bottom: 0.3rem;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
             display: inline-block;
+        }
+
+        .sidebar-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            border-radius: 2px;
         }
 
         .category-list {
             list-style: none;
+            margin-top: 0.5rem;
         }
 
         .category-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed #e2d7cd;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .category-list li:last-child {
+            border-bottom: none;
         }
 
-        /* FOOTER */
+        .category-list a {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* FOOTER COKLAT PEKAT */
         footer {
-            background-color: #3b2314; 
-            color: #f7f3ed; 
+            background-color: #23160C;
+            color: #FAF3E0;
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 3rem;
-            font-size: 0.9rem;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
 
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -197,6 +302,15 @@
             .nav-container {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            .nav-links {
+                gap: 1.5rem;
+            }
+            .story-card {
+                padding: 1.5rem;
+            }
+            .page-banner h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -206,9 +320,9 @@
     <!-- NAVIGASI HEADER -->
     <header>
         <div class="nav-container">
-            <div class="logo">About ME...</div>
+            <div class="logo">About <span>ME.</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html.html">Beranda</a></li>
                 <li><a href="cerita.html" class="active">Cerita</a></li>
                 <li><a href="KONTAK.html">Kontak</a></li>
             </ul>
@@ -218,7 +332,7 @@
     <!-- BANNER HALAMAN CERITA -->
     <section class="page-banner">
         <h1>Kumpulan Cerita & Catatan</h1>
-        <p>Refleksi film, ulasan karya klasik, dan sudut pandang pribadi.</p>
+        <p>Film yang menurut saya seru.</p>
     </section>
 
     <!-- KONTEN UTAMA HALAMAN CERITA -->
@@ -247,17 +361,17 @@
 
                     <h3>Visual dan Musik yang Menenangkan</h3>
                     <p>
-                        Salah satu hal yang paling memukau dari film ini adalah sinematografinya. Pemandangan pedesaan Inggris yang asri, pencahayaan bergaya lukisan era lampau (*painterly aesthetic*), dipadukan dengan alunan musik gubahan Dario Marianelli yang begitu emosional, membuat penonton seperti ditarik langsung masuk ke abad ke-19.
+                        Salah satu hal yang paling memukau dari film ini adalah sinematografinya. Pemandangan pedesaan Inggris yang asri, pencahayaan bergaya lukisan era lampau (<em>painterly aesthetic</em>), dipadukan dengan alunan musik gubahan Dario Marianelli yang begitu emosional, membuat penonton seperti ditarik langsung masuk ke abad ke-19.
                     </p>
 
-                    <div style="margin-top: 20px; padding: 15px; background-color: #efe8de; border-left: 4px solid #8c5a3c; border-radius: 4px;">
-                        <p style="margin-bottom: 0; font-style: italic;">
+                    <div class="story-quote">
+                        <p style="margin-bottom: 0;">
                             "You must know... surely, you must know it was all for you. 
                             You are too generous to trifle with me. 
                             I believe you spoke with my aunt last night, and it has taught me to hope as I'd scarcely allowed myself before. If your feelings are still what they were last April, tell me so at once.
-                             My affections and wishes have not changed, but one word from you will silence me forever.
-                             If, however, your feelings have changed, I will have to tell you: you have bewitched me, body and soul, and I love, I love, I love you. 
-                             I never wish to be parted from you from this day on."
+                            My affections and wishes have not changed, but one word from you will silence me forever.
+                            If, however, your feelings have changed, I will have to tell you: you have bewitched me, body and soul, and I love, I love, I love you. 
+                            I never wish to be parted from you from this day on."
                         </p>
                     </div>
                 </div>
@@ -270,10 +384,14 @@
             
             <!-- Widget Media Sosial -->
             <div class="sidebar-box">
-                <h3 class="sidebar-title">FOLLOW ME :</h3>
-                <p>Media Sosial:</p>
-                <ul class="category-list" style="margin-top: 0.5rem;">
-                    <li><a href="https://www.instagram.com/fleeurdebleu_" target="_blank">📷 @fleeurdebleu_</a></li>
+                <h3 class="sidebar-title">Follow Me</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Mari terhubung di media sosial:</p>
+                <ul class="category-list">
+                    <li>
+                        <a href="https://www.instagram.com/fleeurdebleu_" target="_blank">
+                            📸 @fleeurdebleu_
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -283,7 +401,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; DHANA RIZKY AKHBAR XII TKJ B</p>
+        <p>&copy; 2026 DHANA RIZKY AKHBAR | XII TKJ B</p>
     </footer>
 
 </body>
