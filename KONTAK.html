@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak - Dhana Rizky Akhbar</title>
+    
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
+        /* PALET WARNA COKLAT & CREAM */
+        :root {
+            --primary-color: #6F4E37;      /* Coklat Kopi / Coffee Brown */
+            --primary-hover: #4A3323;      /* Coklat Tua Pekat / Dark Roast */
+            --text-dark: #2C1D11;          /* Espresso Dark Brown */
+            --text-muted: #6E5B4F;         /* Coklat Sedang / Warm Taupe */
+            --bg-main: #FAF3E0;            /* Warm Cream Background */
+            --bg-card: #FFFDF9;            /* Soft Ivory White Card */
+            --bg-profile: #EADBC8;         /* Rich Cream / Latte Accent */
+            --border-color: #D8C4B6;       /* Soft Brown Border */
+            --tag-bg: #EFE3C8;             /* Cream Highlight Tag */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,35 +31,37 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #4a3b32; 
-            background-color: #f7f3ed; 
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
         }
 
         a {
-            color: #8c5a3c;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
-            color: #5a3825; 
+            color: var(--primary-hover);
         }
 
         /* HEADER & NAVIGASI */
         header {
-            background-color: #fffdfa; 
-            border-bottom: 1px solid #e2d7cd; 
+            background-color: rgba(255, 253, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(111, 78, 55, 0.05);
         }
 
         .nav-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,162 +69,221 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a2e1b;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: #6e5444; 
+            color: var(--text-muted);
             font-weight: 500;
+            position: relative;
         }
 
-        .nav-links a.active, .nav-links a:hover {
-            color: #4a2e1b;
-            font-weight: bold;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active::after,
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* BANNER HALAMAN KONTAK */
         .page-banner {
-            background-color: #efe8de; 
-            padding: 2.5rem 2rem;
+            background-color: var(--bg-profile);
+            padding: 3.5rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #e2d7cd;
+            border-bottom: 1px solid var(--border-color);
+            background-image: radial-gradient(var(--border-color) 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
         }
 
         .page-banner h1 {
-            font-size: 2rem;
-            color: #4a2e1b;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
         .page-banner p {
-            color: #6e5444;
-            font-size: 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
         }
 
         /* LAYOUT UTAMA */
         .main-container {
             max-width: 1100px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         /* FORMULIR KONTAK */
         .contact-box {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 1.8rem;
-            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08); 
-            border: 1px solid #eee6dd;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(74, 51, 35, 0.05);
+            border: 1px solid var(--border-color);
         }
 
         .contact-box h2 {
-            font-size: 1.4rem;
-            color: #4a2e1b;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed #e2d7cd;
-            padding-bottom: 0.5rem;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 1rem;
         }
 
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-            color: #4a2e1b;
-            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 0.95rem;
         }
 
         .form-group input, 
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #e2d7cd;
-            border-radius: 6px;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             font-family: inherit;
             font-size: 0.95rem;
-            background-color: #fffdfa;
-            color: #4a3b32;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            transition: all 0.3s ease;
         }
 
         .form-group input:focus, 
         .form-group textarea:focus {
             outline: none;
-            border-color: #8c5a3c;
-            box-shadow: 0 0 0 2px rgba(140, 90, 60, 0.15);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(111, 78, 55, 0.15);
+            background-color: #ffffff;
         }
 
         .btn-submit {
-            background-color: #8c5a3c;
+            background-color: var(--primary-color);
             color: #ffffff;
             border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.95rem;
-            font-weight: bold;
-            border-radius: 6px;
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            transition: background-color 0.2s;
+            transition: all 0.3s ease;
+            width: 100%;
+            letter-spacing: 0.5px;
         }
 
         .btn-submit:hover {
-            background-color: #5a3825;
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(74, 51, 35, 0.2);
         }
 
         /* SIDEBAR / INFO KONTAK */
+        .sidebar-column {
+            position: sticky;
+            top: 100px;
+            height: max-content;
+        }
+
         .sidebar-box {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08);
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(74, 51, 35, 0.05);
             margin-bottom: 2rem;
-            border: 1px solid #eee6dd;
+            border: 1px solid var(--border-color);
         }
 
         .sidebar-title {
-            font-size: 1.1rem;
-            color: #4a2e1b;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #8c5a3c; 
-            padding-bottom: 0.3rem;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
             display: inline-block;
+        }
+
+        .sidebar-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            border-radius: 2px;
         }
 
         .info-list {
             list-style: none;
+            margin-top: 0.5rem;
         }
 
         .info-list li {
-            padding: 0.6rem 0;
-            border-bottom: 1px dashed #e2d7cd;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed var(--border-color);
             font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
         }
 
         .info-list strong {
-            color: #4a2e1b;
+            color: var(--text-dark);
+            font-weight: 600;
+            display: inline-block;
+            width: 70px;
         }
 
-        /* FOOTER */
+        /* FOOTER COKLAT PEKAT */
         footer {
-            background-color: #3b2314; 
-            color: #f7f3ed; 
+            background-color: #23160C;
+            color: #FAF3E0;
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 3rem;
-            font-size: 0.9rem;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
 
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -211,6 +291,15 @@
             .nav-container {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            .nav-links {
+                gap: 1.5rem;
+            }
+            .contact-box {
+                padding: 1.5rem;
+            }
+            .page-banner h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -220,11 +309,11 @@
     <!-- NAVIGASI HEADER -->
     <header>
         <div class="nav-container">
-            <div class="logo">About ME...</div>
+            <div class="logo">About <span>ME.</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html.html">Beranda</a></li>
                 <li><a href="cerita.html">Cerita</a></li>
-                <li><a href="kontak.html" class="active">Kontak</a></li>
+                <li><a href="KONTAK.html" class="active">Kontak</a></li>
             </ul>
         </div>
     </header>
@@ -232,7 +321,7 @@
     <!-- BANNER HALAMAN KONTAK -->
     <section class="page-banner">
         <h1>Hubungi Saya</h1>
-        <p>Punya pertanyaan, saran, atau sekadar ingin menyapa? langsung saja!</p>
+        <p>Punya pertanyaan, saran, atau sekadar ingin menyapa? Langsung saja!</p>
     </section>
 
     <!-- KONTEN UTAMA HALAMAN KONTAK -->
@@ -282,11 +371,13 @@
             </div>
 
             <div class="sidebar-box">
-                <h3 class="sidebar-title">Media Sosial</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Follow Me:</p>
+                <h3 class="sidebar-title">Follow Me</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Mari terhubung di media sosial:</p>
                 <ul class="info-list">
                     <li>
-                        <a href="https://www.instagram.com/fleeurdebleu_" target="_blank">📷 @fleeurdebleu_</a>
+                        <a href="https://www.instagram.com/fleeurdebleu_" target="_blank" style="display: flex; align-items: center; gap: 8px;">
+                            📸 @fleeurdebleu_
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -297,7 +388,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; DHANA RIZKY AKHBAR XII TKJ B</p>
+        <p>&copy; 2026 DHANA RIZKY AKHBAR | XII TKJ B</p>
     </footer>
 
 </body>
