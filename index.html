@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tugas Hosting</title>
+    <title>Tugas Hosting - Dhana Rizky Akhbar</title>
+    
+    <!-- Import Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
+        /* PALET WARNA COKLAT & CREAM */
+        :root {
+            --primary-color: #6F4E37;      /* Coklat Kopi / Coffee Brown */
+            --primary-hover: #4A3323;      /* Coklat Tua Pekat / Dark Roast */
+            --text-dark: #2C1D11;          /* Espresso Dark Brown */
+            --text-muted: #6E5B4F;         /* Coklat Sedang / Warm Taupe */
+            --bg-main: #FAF3E0;            /* Warm Cream Background */
+            --bg-card: #FFFDF9;            /* Soft Ivory White Card */
+            --bg-profile: #EADBC8;         /* Rich Cream / Latte Accent */
+            --border-color: #D8C4B6;       /* Soft Brown Border */
+            --tag-bg: #EFE3C8;             /* Cream Highlight Tag */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -12,35 +31,37 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #4a3b32; 
-            background-color: #f7f3ed; 
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-main);
         }
 
         a {
-            color: #8c5a3c;
+            color: var(--primary-color);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         a:hover {
-            text-decoration: underline;
-            color: #5a3825; 
+            color: var(--primary-hover);
         }
 
         /* HEADER & NAVIGASI */
         header {
-            background-color: #fffdfa; 
-            border-bottom: 1px solid #e2d7cd; 
+            background-color: rgba(255, 253, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 10px rgba(111, 78, 55, 0.05);
         }
 
         .nav-container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -48,31 +69,56 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            color: #4a2e1b;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: #6e5444; 
+            color: var(--text-muted);
             font-weight: 500;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: #4a2e1b;
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
         }
 
         /* PROFIL & ABOUT ME */
         .profile-section {
-            background-color: #efe8de; 
-            padding: 3rem 2rem;
+            background-color: var(--bg-profile);
+            padding: 4rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #e2d7cd;
+            border-bottom: 1px solid var(--border-color);
+            background-image: radial-gradient(var(--border-color) 1.2px, transparent 1.2px);
+            background-size: 24px 24px;
         }
 
         .profile-container {
@@ -81,124 +127,239 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #8c5a3c; 
-            margin-bottom: 1rem;
+            border: 5px solid var(--bg-card);
+            box-shadow: 0 10px 20px rgba(74, 51, 35, 0.15);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
         }
 
         .profile-title {
-            font-size: 1.8rem;
-            color: #4a2e1b;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
             margin-bottom: 0.5rem;
         }
 
         .profile-bio {
-            color: #6e5444;
-            font-size: 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
 
+        /* GRID UTAMA */
         .main-container {
             max-width: 1100px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
-        /* CARD CERITA / KONTEN BEBAS */
+        /* KARTU CERITA (STORY CARDS) */
         .story-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 1.8rem;
-            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08); 
-            margin-bottom: 2rem;
-            border: 1px solid #eee6dd;
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(74, 51, 35, 0.05);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(74, 51, 35, 0.1);
         }
 
         .story-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-            border-bottom: 1px dashed #e2d7cd;
-            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 1rem;
         }
 
         .story-tag {
-            background-color: #efe8de;
-            color: #8c5a3c;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
+            background-color: var(--tag-bg);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .story-date {
-            font-size: 0.85rem;
-            color: #a08875;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
         .story-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: #4a2e1b;
-        }
-
-        .story-body {
-            color: #5c493c;
-            line-height: 1.7;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            line-height: 1.3;
         }
 
         .story-img {
             width: 100%;
-            height: 250px;
+            height: 350px;
             object-fit: cover;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* GAYA KHUSUS RESEP PIZZA (SESUAI TEMA COKLAT & CREAM) */
+        .recipe-content h1 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--tag-bg);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .recipe-content p.subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .recipe-content h2 {
+            color: var(--primary-hover);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+        }
+
+        .recipe-content ul, .recipe-content ol {
+            padding-left: 20px;
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .recipe-content li {
+            margin-bottom: 8px;
+        }
+
+        .recipe-content ol > li {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .recipe-content ol ul {
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        .recipe-footer {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: var(--bg-main);
+            border-left: 5px solid var(--primary-color);
             border-radius: 6px;
-            margin: 1rem 0;
+        }
+
+        .recipe-footer h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .recipe-highlight {
+            font-size: 1.1em;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary-color);
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
         }
 
         /* SIDEBAR */
+        .sidebar-column {
+            position: sticky;
+            top: 100px;
+            height: max-content;
+        }
+
         .sidebar-box {
-            background-color: #ffffff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(74, 46, 27, 0.08);
+            background-color: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(74, 51, 35, 0.05);
             margin-bottom: 2rem;
-            border: 1px solid #eee6dd;
+            border: 1px solid var(--border-color);
         }
 
         .sidebar-title {
-            font-size: 1.1rem;
-            color: #4a2e1b;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #8c5a3c; 
-            padding-bottom: 0.3rem;
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
             display: inline-block;
+        }
+
+        .sidebar-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            border-radius: 2px;
         }
 
         .category-list {
             list-style: none;
+            margin-top: 1rem;
         }
 
         .category-list li {
-            padding: 0.5rem 0;
-            border-bottom: 1px dashed #e2d7cd;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed var(--border-color);
         }
 
-        /* FOOTER */
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        /* FOOTER COKLAT PEKAT */
         footer {
-            background-color: #3b2314; 
-            color: #f7f3ed; 
+            background-color: #23160C;
+            color: #FAF3E0;
             text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 3rem;
-            font-size: 0.9rem;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
         }
 
+        /* RESPONSIVE DESIGN */
         @media (max-width: 768px) {
             .main-container {
                 grid-template-columns: 1fr;
@@ -206,6 +367,18 @@
             .nav-container {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            .nav-links {
+                gap: 1.5rem;
+            }
+            .profile-title {
+                font-size: 1.8rem;
+            }
+            .story-img {
+                height: 250px;
+            }
+            .story-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -215,9 +388,9 @@
     <!-- NAVIGASI HEADER -->
     <header>
         <div class="nav-container">
-            <div class="logo">About ME...</div>
+            <div class="logo">About <span>ME.</span></div>
             <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html.html" class="active">Beranda</a></li>
                 <li><a href="cerita.html">Cerita</a></li>
                 <li><a href="KONTAK.html">Kontak</a></li>
             </ul>
@@ -227,7 +400,7 @@
     <!-- PROFIL / ABOUT ME -->
     <section class="profile-section">
         <div class="profile-container">
-            <img src="FOTOdiri.png" alt="Foto Profil" class="profile-img">
+            <img src="FOTOdiri.png" alt="Foto Profil" class="profile-img" onerror="this.src='https://via.placeholder.com/160'">
             <h1 class="profile-title">Dhana Rizky Akhbar</h1>
             <p class="profile-bio">
                 SELAMAT DATANG DI WEBSITE SAYA.
@@ -244,110 +417,102 @@
             <!-- Cerita 1 -->
             <article class="story-card">
                 <div class="story-header">
-                    <span class="story-tag">Sebuah TUTORIYAL</span>
+                    <span class="story-tag">Sebuah Tutorial</span>
                     <span class="story-date">11 Oktober 2026</span>
                 </div>
                 <h2 class="story-title">Cara Membuat PIZZA</h2>
-                <img src="sliced-pepperoni-pizza.jpg" alt="Foto Cerita" class="story-img">
-                <div class="story-body">
-                    <p>
-                        
-         <article style="max-width: 800px; margin: 0 auto; font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333;">
-    <header>
-        <h1 style="color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 10px;">Tutorial Lengkap Membuat Pizza Rumahan</h1>
-        <p><em>Bikin pizza empuk, lezat, dan anti-gagal bisa menggunakan oven maupun teflon!</em></p>
-    </header>
+                <img src="sliced-pepperoni-pizza.jpg" alt="Foto Pizza" class="story-img" onerror="this.src='https://via.placeholder.com/800x400'">
+                
+                <div class="recipe-content">
+                    <header>
+                        <h1>Tutorial Lengkap Membuat Pizza Rumahan</h1>
+                        <p class="subtitle">Bikin pizza empuk, lezat, dan anti-gagal bisa menggunakan oven maupun teflon!</p>
+                    </header>
 
-    <section aria-label="Peralatan">
-        <h2 style="color: #e65100;">🛠️ Peralatan yang Diperlukan</h2>
-        <ul>
-            <li>Wadah mangkuk besar</li>
-            <li>Kain bersih atau <em>plastic wrap</em></li>
-            <li>Garpu</li>
-            <li>Gilingan adonan (<em>rolling pin</em>) atau botol kaca bersih</li>
-            <li>Loyang pizza atau teflon berpenutup</li>
-            <li>Pisau potong pizza / <em>pizza cutter</em></li>
-        </ul>
-    </section>
+                    <section>
+                        <h2>🛠️ Peralatan yang Diperlukan</h2>
+                        <ul>
+                            <li>Wadah mangkuk besar</li>
+                            <li>Kain bersih atau <em>plastic wrap</em></li>
+                            <li>Garpu</li>
+                            <li>Gilingan adonan (<em>rolling pin</em>) atau botol kaca bersih</li>
+                            <li>Loyang pizza atau teflon berpenutup</li>
+                            <li>Pisau potong pizza / <em>pizza cutter</em></li>
+                        </ul>
+                    </section>
 
-    <section aria-label="Langkah Pembuatan">
-        <h2 style="color: #e65100;">📋 Langkah-Langkah Pembuatan</h2>
-        
-        <ol style="padding-left: 20px;">
-            <li style="margin-bottom: 15px;">
-                <strong>Mengaktifkan Ragi (Membuat Biang)</strong>
-                <ul>
-                    <li>Siapkan 150 ml air hangat kuku di dalam gelas.</li>
-                    <li>Masukkan 1 sdt ragi instan dan 2 sdm gula pasir.</li>
-                    <li>Aduk rata, lalu diamkan selama 10 menit.</li>
-                    <li><em>Catatan: Jika air mengeluarkan busa/buih, tandanya ragi aktif dan siap digunakan.</em></li>
-                </ul>
-            </li>
+                    <section>
+                        <h2>📋 Langkah-Langkah Pembuatan</h2>
+                        <ol>
+                            <li>
+                                Mengaktifkan Ragi (Membuat Biang)
+                                <ul>
+                                    <li>Siapkan 150 ml air hangat kuku di dalam gelas.</li>
+                                    <li>Masukkan 1 sdt ragi instan dan 2 sdm gula pasir.</li>
+                                    <li>Aduk rata, lalu diamkan selama 10 menit.</li>
+                                    <li><em>Catatan: Jika air mengeluarkan busa/buih, tandanya ragi aktif dan siap digunakan.</em></li>
+                                </ul>
+                            </li>
+                            <li>
+                                Membuat dan Menguleni Adonan Base
+                                <ul>
+                                    <li>Campurkan 250 gram tepung terigu protein tinggi dan 1/2 sdt garam di wadah besar.</li>
+                                    <li>Tuangkan air ragi yang sudah berbusa sedikit demi sedikit sambil diaduk.</li>
+                                    <li>Tambahkan 2 sdm minyak goreng atau <em>olive oil</em>.</li>
+                                    <li>Uleni adonan dengan tangan hingga kalis dan tidak lengket (sekitar 5–10 menit).</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Mengistirahatkan Adonan (Proving)
+                                <ul>
+                                    <li>Bentuk adonan menjadi bulatan besar.</li>
+                                    <li>Olesi tipis permukaan adonan dengan sedikit minyak agar tidak kering.</li>
+                                    <li>Tutup wadah rapat-rapat menggunakan kain bersih lembap atau <em>plastic wrap</em>.</li>
+                                    <li>Diamkan selama 45–60 menit di tempat hangat sampai ukuran adonan mengembang 2 kali lipat.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Membentuk Base Pizza
+                                <ul>
+                                    <li>Kempeskan adonan dengan cara ditinju perlahan untuk membuang gas di dalamnya.</li>
+                                    <li>Siapkan loyang atau teflon yang sudah diolesi mentega tipis.</li>
+                                    <li>Giling atau pipihkan adonan menggunakan jari tangan langsung di atas loyang hingga membentuk lingkaran.</li>
+                                    <li>Buat bagian pinggiran sedikit lebih tebal daripada bagian tengah.</li>
+                                    <li>Tusuk-tusuk bagian tengah adonan dengan garpu agar adonan tidak menggelembung saat dipanggang.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Memberi Topping
+                                <ul>
+                                    <li>Oleskan saus bolognese atau saus tomat secara merata di area yang ditusuk garpu.</li>
+                                    <li>Taburkan sebagian keju mozzarella di lapisan bawah.</li>
+                                    <li>Tata topping pilihan Anda (seperti sosis, smoked beef, bawang bombai, dan paprika).</li>
+                                    <li>Tutup kembali dengan sisa keju mozzarella dan taburan oregano kering untuk aroma khas pizza Italia.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                Proses Memanggang
+                                <ul>
+                                    <li><strong>Jika Menggunakan Oven:</strong> Panggang dalam oven yang sudah dipanaskan pada suhu 190°C selama 15–20 menit hingga pinggiran roti kecokelatan.</li>
+                                    <li><strong>Jika Menggunakan Teflon:</strong> Letakkan teflon di atas kompor dengan api paling kecil. Tutup teflon rapat-rapat dan masak selama 10–15 menit hingga keju meleleh sempurna dan bagian bawah roti matang.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </section>
 
-            <li style="margin-bottom: 15px;">
-                <strong>Membuat dan Menguleni Adonan Base</strong>
-                <ul>
-                    <li>Campurkan 250 gram tepung terigu protein tinggi dan 1/2 sdt garam di wadah besar.</li>
-                    <li>Tuangkan air ragi yang sudah berbusa sedikit demi sedikit sambil diaduk.</li>
-                    <li>Tambahkan 2 sdm minyak goreng atau <em>olive oil</em>.</li>
-                    <li>Uleni adonan dengan tangan hingga kalis dan tidak lengket (sekitar 5–10 menit).</li>
-                </ul>
-            </li>
-
-            <li style="margin-bottom: 15px;">
-                <strong>Mengistirahatkan Adonan (Proving)</strong>
-                <ul>
-                    <li>Bentuk adonan menjadi bulatan besar.</li>
-                    <li>Olesi tipis permukaan adonan dengan sedikit minyak agar tidak kering.</li>
-                    <li>Tutup wadah rapat-rapat menggunakan kain bersih lembap atau <em>plastic wrap</em>.</li>
-                    <li>Diamkan selama 45–60 menit di tempat hangat sampai ukuran adonan mengembang 2 kali lipat.</li>
-                </ul>
-            </li>
-
-            <li style="margin-bottom: 15px;">
-                <strong>Membentuk Base Pizza</strong>
-                <ul>
-                    <li>Kempeskan adonan dengan cara ditinju perlahan untuk membuang gas di dalamnya.</li>
-                    <li>Siapkan loyang atau teflon yang sudah diolesi mentega tipis.</li>
-                    <li>Giling atau pipihkan adonan menggunakan jari tangan langsung di atas loyang hingga membentuk lingkaran.</li>
-                    <li>Buat bagian pinggiran sedikit lebih tebal daripada bagian tengah.</li>
-                    <li>Tusuk-tusuk bagian tengah adonan dengan garpu agar adonan tidak menggelembung saat dipanggang.</li>
-                </ul>
-            </li>
-
-            <li style="margin-bottom: 15px;">
-                <strong>Memberi Topping</strong>
-                <ul>
-                    <li>Oleskan saus bolognese atau saus tomat secara merata di area yang ditusuk garpu.</li>
-                    <li>Taburkan sebagian keju mozzarella di lapisan bawah.</li>
-                    <li>Tata topping pilihan Anda (seperti sosis, smoked beef, bawang bombai, dan paprika).</li>
-                    <li>Tutup kembali dengan sisa keju mozzarella dan taburan oregano kering untuk aroma khas pizza Italia.</li>
-                </ul>
-            </li>
-
-            <li style="margin-bottom: 15px;">
-                <strong>Proses Memanggang</strong>
-                <ul>
-                    <li><strong>Jika Menggunakan Oven:</strong> Panggang dalam oven yang sudah dipanaskan pada suhu 190°C selama 15–20 menit hingga pinggiran roti kecokelatan.</li>
-                    <li><strong>Jika Menggunakan Teflon:</strong> Letakkan teflon di atas kompor dengan api paling kecil. Tutup teflon rapat-rapat dan masak selama 10–15 menit hingga keju meleleh sempurna dan bagian bawah roti matang.</li>
-                </ul>
-            </li>
-        </ol>
-    </section>
-
-    <footer style="margin-top: 30px; padding: 15px; background-color: #fff3e0; border-left: 5px solid #ffb74d;">
-        <h2 style="color: #d32f2f; margin-top: 0;">🍕 Penyajian</h2>
-        <ul>
-            <li>Angkat pizza yang sudah matang dari loyang atau teflon dengan hati-hati.</li>
-            <li>Letakkan di atas talenan kayu atau piring datar yang besar.</li>
-            <li>Potong pizza menjadi 6 atau 8 bagian berbentuk segitiga menggunakan pisau tajam atau <em>pizza cutter</em>.</li>
-        </ul>
-        <p style="font-size: 1.1em; font-weight: bold; text-align: center; color: #d32f2f; margin-top: 15px;">
-            Pizza siap dihidangkan selagi hangat bersama cocolan saus sambal atau saus TOUMAT!!
-                 </p>
-             </footer>
-        </article>                 
+                    <div class="recipe-footer">
+                        <h2>🍕 Penyajian</h2>
+                        <ul>
+                            <li>Angkat pizza yang sudah matang dari loyang atau teflon dengan hati-hati.</li>
+                            <li>Letakkan di atas talenan kayu atau piring datar yang besar.</li>
+                            <li>Potong pizza menjadi 6 atau 8 bagian berbentuk segitiga menggunakan pisau tajam atau <em>pizza cutter</em>.</li>
+                        </ul>
+                        <p class="recipe-highlight">
+                            Pizza siap dihidangkan selagi hangat bersama cocolan saus sambal atau saus TOMAT!!
+                        </p>
+                    </div>
                 </div>
+            </article>
 
             <!-- Cerita 2 -->
             <article class="story-card">
@@ -357,7 +522,8 @@
                 </div>
                 <h2 class="story-title">I Want To make The World a Better Place</h2>
                 <div class="story-body">
-                    <p><i> Audentez Fortuna Iuvat!</i>
+                    <p style="font-size: 1.1rem; color: var(--text-muted);">
+                        <i>"Audentes Fortuna Iuvat!"</i> <br>
                     </p>
                 </div>
             </article>
@@ -369,19 +535,24 @@
             
             <!-- Widget Media Sosial -->
             <div class="sidebar-box">
-                <h3 class="sidebar-title">FOLLOW ME :</h3>
-                <p>Media Sosial:</p>
-                <ul class="category-list" style="margin-top: 0.5rem;">
-                    <li><a href="https://www.instagram.com/fleeurdebleu_" target="_blank">📷 @fleeurdebleu_</a></li>
+                <h3 class="sidebar-title">Follow Me</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Mari terhubung di media sosial:</p>
+                <ul class="category-list">
+                    <li>
+                        <a href="https://www.instagram.com/fleeurdebleu_" target="_blank">
+                            📸 @fleeurdebleu_
+                        </a>
+                    </li>
                 </ul>
             </div>
+            
         </aside>
 
     </div>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; DHANA RIZKY AKHBAR XII TKJ B</p>
+        <p>&copy; 2026 DHANA RIZKY AKHBAR | XII TKJ B</p>
     </footer>
 
 </body>
